@@ -1,0 +1,54 @@
+{
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "dist/index.js",
+	"typings": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"src",
+		"public"
+	],
+	"engines": {
+		"node": ">=10"
+	},
+	"scripts": {
+		"dev": "yarn rm:dist && tsc -w",
+		"prepare": "yarn rm:dist && tsc",
+		"start": "node dist/index",
+		"rm:dist": "rm -rf dist"
+	},
+	"peerDependencies": {},
+	"name": "create-tsa",
+	"description": "Set up a modern TypeScript app by running one command",
+	"author": "Justine Licuanan",
+	"keywords": [
+		"cli",
+		"typescript",
+		"graphql",
+		"express",
+		"tsconfig",
+		"starter-kit"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/JustineLicuanan/create-typescript-app.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JustineLicuanan/create-typescript-app/issues"
+	},
+	"homepage": "https://github.com/JustineLicuanan/create-typescript-app#readme",
+	"bin": {
+		"create-tsa": "./dist/index.js",
+		"tsa": "./dist/index.js"
+	},
+	"devDependencies": {
+		"@types/fs-extra": "^9.0.6",
+		"@types/node": "^14.14.22",
+		"typescript": "^4.1.3"
+	},
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"commander": "^7.0.0",
+		"fs-extra": "^9.1.0"
+	}
+}
