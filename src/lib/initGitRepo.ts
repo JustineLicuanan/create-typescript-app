@@ -2,6 +2,7 @@ import { green } from 'chalk';
 import { execSync } from 'child_process';
 
 import { Options, Template } from '../types/OptionTypes';
+const pkg = require('../../package.json');
 
 type InitGitRepo = (options: Options) => void;
 
@@ -22,7 +23,7 @@ const initGitRepo: InitGitRepo = ({ template }) => {
 		console.log(`${green('Initializing Git repository...')}\n`);
 
 		execSync(
-			'git init && git add . && git commit -m "Initialize project with create-tsa"',
+			`git init && git add . && git commit -m "Initialize project with ${pkg.name}"`,
 			{ stdio: 'ignore' }
 		);
 	}
