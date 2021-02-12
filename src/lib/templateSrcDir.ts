@@ -4,9 +4,13 @@ type TemplateSrcDir = (options: Options) => string;
 
 const templateSrcDir: TemplateSrcDir = ({
 	simple,
-	template = Template.GRAPHQL,
+	template = Template.PERNG,
 }) => {
-	if (template === Template.GRAPHQL || template === Template.EXPRESS) {
+	if (
+		template === Template.PERNG ||
+		template === Template.GRAPHQL ||
+		template === Template.EXPRESS
+	) {
 		return simple ? 'simple-template' : 'auth-template';
 	}
 

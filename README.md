@@ -1,5 +1,10 @@
 # Create TypeScript App (Create TSA)
 
+[![NPM](https://nodei.co/npm/create-tsa.png)](https://www.npmjs.com/package/create-tsa)
+
+[![GitHub issues](https://img.shields.io/github/issues/JustineLicuanan/create-typescript-app.svg)](https://github.com/JustineLicuanan/create-typescript-app/issues)
+[![Known vulnerabilities](https://snyk.io/test/npm/create-tsa/badge.svg)](https://snyk.io/test/npm/create-tsa)
+
 Set up a modern TypeScript app by running one command
 
 ## Quick Overview
@@ -21,8 +26,8 @@ Below is the list of options you can use with this CLI, run `npx create-tsa --he
 
 - `-t, --template <app>`
 
-Choices: graphql, express, tsc\
-Description: Specify app template to use (set to graphql by default)
+Choices: perng, graphql, express, tsc\
+Description: Specify app template to use (set to perng by default)
 
 ```bash
 # `-t` Example

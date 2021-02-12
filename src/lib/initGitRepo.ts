@@ -17,7 +17,9 @@ const isGitInstalled = () => {
 
 const initGitRepo: InitGitRepo = ({ template }) => {
 	if (
-		(template === Template.GRAPHQL || template === Template.EXPRESS) &&
+		(template === Template.PERNG ||
+			template === Template.GRAPHQL ||
+			template === Template.EXPRESS) &&
 		isGitInstalled()
 	) {
 		console.log(`${green('Initializing Git repository...')}\n`);

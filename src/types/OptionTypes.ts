@@ -1,4 +1,5 @@
 export enum Template {
+	PERNG = 'perng',
 	GRAPHQL = 'graphql',
 	EXPRESS = 'express',
 	TSC = 'tsc',

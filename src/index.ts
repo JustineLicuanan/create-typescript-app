@@ -17,8 +17,8 @@ const program = new Command(cyan(`npx ${pkg.name}`))
 	})
 	.addOption(
 		new Option('-t, --template <app>', 'Choose app template')
-			.choices(['graphql', 'express', 'tsc'])
-			.default('graphql')
+			.choices(['perng', 'graphql', 'express', 'tsc'])
+			.default('perng')
 	)
 	.option('-s, --simple', 'Use simple template')
 	.parse();
@@ -30,9 +30,8 @@ if (!appDir) {
 		'For example, to generate an Express app w/ auth template, run command:'
 	);
 	console.log(
-		`  ${program.name()} ${green('my-app')} ${cyan('-t')} ${green('express')}`
+		`  ${program.name()} ${green('my-app')} ${cyan('-t')} ${green('express')}\n`
 	);
-	console.log();
 	process.exit();
 }
 
