@@ -1,44 +1,32 @@
-#!/usr/bin/env node
-import { cyan, green } from 'chalk';
-import { Command, Option } from 'commander';
+import { bold, red } from 'chalk';
+import clear from 'clear';
+import { prompt } from 'inquirer';
 
-import copyTemplate from './lib/copyTemplate';
-import initGitRepo from './lib/initGitRepo';
+import { questions } from './questions';
+import { EConsoleStatus } from './types/EConsoleStatus';
+import { handleAnswers } from './utils/handleAnswers';
 const pkg = require('../package.json');
 
-let appDir: any;
-const program = new Command(cyan(`npx ${pkg.name}`))
-	.version(pkg.version)
-	.description(pkg.description)
-	.usage(green('<app-directory> [options]'))
-	.arguments('[app-directory]')
-	.action((appDirectory) => {
-		appDir = appDirectory;
-	})
-	.addOption(
-		new Option('-t, --template <app>', 'Choose app template')
-			.choices(['perng', 'graphql', 'express', 'tsc'])
-			.default('perng')
-	)
-	.option('-s, --simple', 'Use simple template')
-	.parse();
+(async () => {
+	try {
+		clear();
 
-if (!appDir) {
-	program.outputHelp();
-	console.log();
-	console.log(
-		'For example, to generate an Express app w/ auth template, run command:'
-	);
-	console.log(
-		`  ${program.name()} ${green('my-app')} ${cyan('-t')} ${green('express')}\n`
-	);
-	process.exit();
-}
+		console.log(`\n${bold(`${pkg.name} | ${pkg.description}`)}\n`);
+		const answers = await prompt(questions);
 
-console.log();
+		handleAnswers(answers);
+	} catch (err) {
+		if (err.isTtyError) {
+			console.error(
+				`\n${red(
+					EConsoleStatus.ERROR
+				)} couldn't render in current environment\n`
+			);
 
-const options = program.opts();
-copyTemplate(appDir, options);
-initGitRepo(options);
+			process.exit(1);
+		}
 
-console.log(`${green('Done!')}\n`);
+		console.error(err);
+		process.exit(1);
+	}
+})();
