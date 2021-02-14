@@ -1,4 +1,4 @@
-import { blueBright, bold, cyan, green, red } from 'chalk';
+import { blueBright, bold, cyan, greenBright, red } from 'chalk';
 import { removeSync } from 'fs-extra';
 
 import { EConsoleStatus } from '../types/EConsoleStatus';
@@ -33,6 +33,8 @@ export const usePERNG = (answers: IAnswers) => {
 	}
 
 	console.log(
-		`${green('success')} cloned ${cyan(answers.template)} template\n`
+		`${greenBright(EConsoleStatus.SUCCESS)} cloned ${cyan(
+			answers.template
+		)} template\n`
 	);
 };

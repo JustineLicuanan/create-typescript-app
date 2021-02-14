@@ -1,4 +1,6 @@
 export enum EConsoleStatus {
-	ERROR = 'error',
+	SUCCESS = 'success',
 	INFO = 'info',
+	WARNING = 'warning',
+	ERROR = 'error',
 }

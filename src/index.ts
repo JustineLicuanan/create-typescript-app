@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { bold, red } from 'chalk';
 import clear from 'clear';
 import { prompt } from 'inquirer';
@@ -26,7 +27,6 @@ const pkg = require('../package.json');
 			process.exit(1);
 		}
 
-		console.error(err);
-		process.exit(1);
+		throw err;
 	}
 })();

@@ -1,7 +1,8 @@
-import { cyan, green } from 'chalk';
+import { cyan, greenBright } from 'chalk';
 import { copySync } from 'fs-extra';
 import { join } from 'path';
 
+import { EConsoleStatus } from '../types/EConsoleStatus';
 import { IAnswers } from '../types/IAnswers';
 import { getTSConfigFileName } from '../utils/getTSConfigFileName';
 
@@ -14,6 +15,8 @@ export const useTSConfig = (answers: IAnswers) => {
 	copySync(join(__dirname, `../../public/tsc/${tsconfig}`), appDir);
 
 	console.log(
-		`${green('success')} cloned ${cyan(answers.template)} template\n`
+		`${greenBright(EConsoleStatus.SUCCESS)} cloned ${cyan(
+			answers.template
+		)} template\n`
 	);
 };
