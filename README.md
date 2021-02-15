@@ -3,7 +3,6 @@
 [![NPM](https://nodei.co/npm/create-tsa.png)](https://www.npmjs.com/package/create-tsa)
 
 [![GitHub issues](https://img.shields.io/github/issues/JustineLicuanan/create-typescript-app.svg)](https://github.com/JustineLicuanan/create-typescript-app/issues)
-[![Known vulnerabilities](https://snyk.io/test/npm/create-tsa/badge.svg)](https://snyk.io/test/npm/create-tsa)
 
 Set up a modern TypeScript app by running one command
 

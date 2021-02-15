@@ -66,7 +66,7 @@ export const useExpress = (answers: IAnswers) => {
 	}
 
 	console.log();
-	cloneRepo(ETemplateRepo.PERNG, answers.appDir);
+	cloneRepo(ETemplateRepo.EXPRESS, answers.appDir);
 
 	process.chdir(answers.appDir);
 	removeSync('.git');
