@@ -15,7 +15,7 @@ npx create-tsa
 You can also install it globally, and run `tsa` command
 
 ```bash
-yarn global add create-tsa
+npm i -g create-tsa
 tsa
 ```
 
